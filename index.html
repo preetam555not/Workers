@@ -1,0 +1,27 @@
+Worker - Preetam Prasad body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f7fa; color: #333; } header { background: #222; color: white; padding: 1rem; text-align: center; } .section { padding: 2rem; max-width: 800px; margin: auto; background: white; margin-top: 1rem; border-radius: 12px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); } h2 { color: #222; } .btn { background: #007bff; color: white; padding: 10px 20px; border: none; border-radius: 6px; cursor: pointer; text-decoration: none; } .btn:hover { background: #0056b3; } #game-board { display: grid; grid-template-columns: repeat(3, 100px); grid-gap: 5px; margin-top: 1rem; } .cell { width: 100px; height: 100px; background: #e0e0e0; display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer; } Worker - Preetam Prasad 
+
+eBook | Templates | Writing Services | Game
+
+📘 The Knife - eBook (₹50) 
+
+A powerful story of struggle to success. Read how a mysterious knife changes everything.
+
+Buy Now (PhonePe) 
+
+🎨 Canva Templates 
+
+Custom thumbnails and designs ready to use. Great for YouTube, Instagram & more.
+
+Get Templates 
+
+✍️ Instagram Caption Writing 
+
+Need catchy captions or help writing text? I’ll do it for you!
+
+Order Now 
+
+🎮 Play Tic Tac Toe (vs Computer) 
+
+Restart 
+
+const board = document.getElementById('game-board'); let cells = Array(9).fill(''); let playerTurn = true; function renderBoard() { board.innerHTML = ''; cells.forEach((val, i) => { const div = document.createElement('div'); div.className = 'cell'; div.innerText = val; div.addEventListener('click', () => makeMove(i)); board.appendChild(div); }); } function makeMove(i) { if (!playerTurn || cells[i]) return; cells[i] = 'X'; playerTurn = false; renderBoard(); setTimeout(computerMove, 500); } function computerMove() { let emptyIndexes = cells.map((val, i) => val === '' ? i : null).filter(i => i !== null); if (emptyIndexes.length > 0) { let move = emptyIndexes[Math.floor(Math.random() * emptyIndexes.length)]; cells[move] = 'O'; playerTurn = true; renderBoard(); } } function restartGame() { cells = Array(9).fill(''); playerTurn = true; renderBoard(); } renderBoard(); 
